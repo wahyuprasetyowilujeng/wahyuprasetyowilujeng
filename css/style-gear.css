@@ -180,7 +180,7 @@ body {
 }
 
 .buy-button {
-  background-color:var(--primary);
+  background-color: var(--primary);
   color: white;
   border: none;
   padding: 6px 12px;
@@ -196,7 +196,6 @@ body {
 .buy-button:hover {
   background-color: #45a049;
 }
-
 
 /* Footer*/
 footer {
