@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video · Wahyu Prasetyo Wilujeng</title>
+    <meta name="description" content="Kumpulan video YouTube Wahyu Pras." />
+    <meta name="theme-color" content="#08060d" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stylevideo.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-logo">Video<span>YouTube</span>.</a>
+
+        <div class="navbar-nav" id="nav">
+          <a href="index.html">Home</a>
+          <a href="gear.html">Gear</a>
+          <a href="video.html" class="active">Video</a>
+          <a href="https://www.youtube.com/channel/UCizajpA1JNvvzRwIz_UDG0w" target="_blank" rel="noopener">YouTube</a>
+        </div>
+
+        <button id="hamburger-menu" aria-label="Buka menu" aria-controls="nav" aria-expanded="false">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero hero-gear" id="home">
+      <div class="container">
+        <main class="content">
+          <span class="badge">Koleksi Video</span>
+          <h1>Video <span>terbaru</span> saya</h1>
+          <p>Kumpulan video dari channel YouTube-ku. Klik untuk memutar.</p>
+          <div class="hero-actions">
+            <a href="#produk" class="btn btn-primary"><i data-feather="arrow-down"></i> Lihat Video</a>
+          </div>
+        </main>
+      </div>
+    </header>
+
+    <section id="produk" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tonton</span>
+          <h2>Video <span>pilihan</span></h2>
+        </div>
+
+        <!-- Kartu video dibuat otomatis oleh script di bawah -->
+        <div class="video-grid" id="video-grid"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="socials">
+        <a href="https://www.instagram.com/wahyuuu.4sa" target="_blank" rel="noopener" aria-label="Instagram"><i data-feather="instagram"></i></a>
+        <a href="https://www.facebook.com/wahyuprasetyowilujeng" target="_blank" rel="noopener" aria-label="Facebook"><i data-feather="facebook"></i></a>
+      </div>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="#produk">Video</a>
+        <a href="mailto:serverwahyuvipo@gmail.com">Kontak</a>
+      </div>
+      <div class="credit">
+        <p>Dibuat oleh <a href="index.html">Wahyu Prasetyo Wilujeng</a> · &copy; 2023</p>
+      </div>
+    </footer>
+
+    <script>
+      /*
+        ISI DAFTAR VIDEO DI SINI (maks. 32 = 4 kolom x 8 baris).
+        id    = kode video YouTube, contoh: youtube.com/watch?v=ABC123xyz -> "ABC123xyz"
+        title = judul yang tampil di bawah video
+        photos = (opsional) daftar foto yang bisa digeser ke kanan setelah video.
+                 Contoh: photos: ["img/a.jpg", "img/b.jpg"]
+                 Kalau tidak diisi, tombol geser tidak muncul.
+        Kalau id dikosongkan, kartu tampil sebagai placeholder.
+      */
+      const videos = [
+        {
+          id: "",
+          title: "Judul video 1",
+          // Contoh foto (ganti dengan URL/path fotomu, misalnya "img/foto1.jpg")
+          photos: [
+            "https://picsum.photos/seed/video1a/640/360",
+            "https://picsum.photos/seed/video1b/640/360",
+            "https://picsum.photos/seed/video1c/640/360",
+          ],
+        },
+        { id: "", title: "Judul video 2" },
+        { id: "", title: "Judul video 3" },
+        { id: "", title: "Judul video 4" },
+        { id: "", title: "Judul video 5" },
+        { id: "", title: "Judul video 6" },
+        { id: "", title: "Judul video 7" },
+        { id: "", title: "Judul video 8" },
+        { id: "", title: "Judul video 9" },
+        { id: "", title: "Judul video 10" },
+        { id: "", title: "Judul video 11" },
+        { id: "", title: "Judul video 12" },
+        { id: "", title: "Judul video 13" },
+        { id: "", title: "Judul video 14" },
+        { id: "", title: "Judul video 15" },
+        { id: "", title: "Judul video 16" },
+        { id: "", title: "Judul video 17" },
+        { id: "", title: "Judul video 18" },
+        { id: "", title: "Judul video 19" },
+        { id: "", title: "Judul video 20" },
+        { id: "", title: "Judul video 21" },
+        { id: "", title: "Judul video 22" },
+        { id: "", title: "Judul video 23" },
+        { id: "", title: "Judul video 24" },
+        { id: "", title: "Judul video 25" },
+        { id: "", title: "Judul video 26" },
+        { id: "", title: "Judul video 27" },
+        { id: "", title: "Judul video 28" },
+        { id: "", title: "Judul video 29" },
+        { id: "", title: "Judul video 30" },
+        { id: "", title: "Judul video 31" },
+        { id: "", title: "Judul video 32" },
+      ];
+
+      const grid = document.getElementById("video-grid");
+
+      videos.slice(0, 32).forEach((v) => {
+        const card = document.createElement("article");
+        card.className = "video-card reveal";
+
+        const frame = document.createElement("div");
+        frame.className = "video-frame";
+
+        const track = document.createElement("div");
+        track.className = "slides";
+
+        const videoSlide = document.createElement("div");
+        videoSlide.className = "slide";
+        track.appendChild(videoSlide);
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "video-thumb" + (v.id ? "" : " empty");
+        btn.setAttribute("aria-label", "Putar: " + v.title);
+        btn.innerHTML = '<span class="play"><i data-feather="play"></i></span>';
+
+        if (v.id) {
+          btn.style.backgroundImage = "url(https://i.ytimg.com/vi/" + v.id + "/hqdefault.jpg)";
+          // Embed YouTube baru dimuat saat diklik supaya halaman tetap ringan
+          btn.addEventListener("click", () => {
+            const iframe = document.createElement("iframe");
+            iframe.src = "https://www.youtube-nocookie.com/embed/" + v.id + "?autoplay=1&rel=0";
+            iframe.title = v.title;
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            videoSlide.replaceChildren(iframe);
+          });
+        }
+
+        videoSlide.appendChild(btn);
+
+        // Slide foto
+        const photos = v.photos || [];
+        photos.forEach((src, i) => {
+          const s = document.createElement("div");
+          s.className = "slide";
+          const img = document.createElement("img");
+          img.loading = "lazy";
+          img.src = src;
+          img.alt = v.title + " - foto " + (i + 1);
+          s.appendChild(img);
+          track.appendChild(s);
+        });
+
+        frame.appendChild(track);
+
+        const body = document.createElement("div");
+        body.className = "video-body";
+        const dots = document.createElement("div");
+        dots.className = "dots";
+        body.appendChild(dots);
+        body.insertAdjacentHTML("beforeend", '<span class="card-tag">Video</span><h3></h3>');
+        body.querySelector("h3").textContent = v.title;
+
+        // Tombol geser kiri/kanan (hanya jika ada foto)
+        const total = photos.length + 1;
+        if (total > 1) {
+          let index = 0;
+
+          const prev = document.createElement("button");
+          prev.type = "button";
+          prev.className = "slide-btn prev";
+          prev.setAttribute("aria-label", "Sebelumnya");
+          prev.innerHTML = '<i data-feather="chevron-left"></i>';
+
+          const next = document.createElement("button");
+          next.type = "button";
+          next.className = "slide-btn next";
+          next.setAttribute("aria-label", "Berikutnya");
+          next.innerHTML = '<i data-feather="chevron-right"></i>';
+
+          for (let i = 0; i < total; i++) dots.appendChild(document.createElement("span"));
+
+          const update = () => {
+            track.style.transform = "translateX(-" + index * 100 + "%)";
+            prev.hidden = index === 0;
+            next.hidden = index === total - 1;
+            [...dots.children].forEach((d, i) => d.classList.toggle("active", i === index));
+          };
+
+          const go = (to) => {
+            // Hentikan video yang sedang diputar saat berpindah slide
+            if (to !== 0 && videoSlide.querySelector("iframe")) {
+              videoSlide.replaceChildren(btn);
+            }
+            index = to;
+            update();
+          };
+
+          prev.addEventListener("click", () => go(Math.max(0, index - 1)));
+          next.addEventListener("click", () => go(Math.min(total - 1, index + 1)));
+
+          frame.append(prev, next);
+          update();
+        }
+
+        card.append(frame, body);
+        grid.appendChild(card);
+      });
+
+      feather.replace();
+    </script>
+    <script src="js/csript.js"></script>
+  </body>
+</html>
